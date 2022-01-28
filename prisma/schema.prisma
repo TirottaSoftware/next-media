@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id        Int       @id @default(autoincrement())
+  title     String    @db.VarChar(255)
+  content   String?
+  imageUrl  String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  author    User      @relation(fields: [authorId], references: [id])
+  authorId  Int
+  likes     Like[]
+  comments  Comment[]
+}
+
+model User {
+  id                Int       @id @default(autoincrement())
+  username          String    @unique @db.VarChar(20)
+  email             String
+  passwordHash      String
+  profilePictureUrl String
+  bio               String    @default("") @db.VarChar(255)
+  posts             Post[]
+  likes             Like[]
+  comments          Comment[]
+  followers         Follows[] @relation("follower")
+  following         Follows[] @relation("following")
+}
+
+model Like {
+  id     Int  @id @default(autoincrement())
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+  post   Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId Int
+}
+
+model Follows {
+  id          Int  @id @default(autoincrement())
+  follower    User @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  followerId  Int
+  following   User @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+  followingId Int
+
+}
+
+model Requests {
+  id    String @id
+  email String
+}
+
+model Comment {
+  id      Int    @id @default(autoincrement())
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId  Int
+  post    Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId  Int
+  content String @db.VarChar(255)
+}
