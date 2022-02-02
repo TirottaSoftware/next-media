@@ -52,7 +52,7 @@ function Feed({ posts, user }) {
   };
 
   return (
-    <div className="relative w-screen flex">
+    <div className="relative w-screen flex flex-col lg:flex-row">
       <CreatePostForm />
       {modalState ? (
         <DeletePostModal
@@ -61,7 +61,7 @@ function Feed({ posts, user }) {
           postToDelete={postToDelete}
         />
       ) : null}
-      <div className="w-3/4 float-right p-5">
+      <div className="w-5/6 lg:w-3/4 float-right lg:p-5 mx-auto">
         {posts.map((post) => {
           return (
             <Post

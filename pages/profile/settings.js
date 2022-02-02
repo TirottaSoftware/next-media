@@ -33,7 +33,7 @@ function Settings({ user }) {
   };
 
   return (
-    <div className="flex">
+    <div className="flex lg:flex-row flex-col">
       <ProfileSettings
         user={user}
         errorMessage={errorMessage}

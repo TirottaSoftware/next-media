@@ -17,7 +17,7 @@ function ProfileSettings(props) {
 
   return (
     <>
-      <div className="w-2/4 p-10">
+      <div className="w-full lg:w-2/4 p-10">
         <form className="flex flex-col rounded-xl shadow-lg shadow-blue-400 bg-white items-center p-5 m-auto my-5">
           <h1 className="text-2xl mb-3">Edit Profile Information</h1>
           <p className="text-center text-red-500">{props.errorMessage}</p>
@@ -56,7 +56,7 @@ function ProfileSettings(props) {
           ) : null}
         </form>
       </div>
-      <div className="w-2/4 p-10">
+      <div className="w-full lg:w-2/4 p-10">
         <form className="flex bg-white flex-col items-center p-5 rounded-xl shadow-lg shadow-blue-400 m-auto my-5">
           <h1 className="text-2xl mb-3">Edit Bio</h1>
           <textarea

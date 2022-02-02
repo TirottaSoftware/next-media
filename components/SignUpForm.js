@@ -16,16 +16,14 @@ function SignUpForm(props) {
   return (
     <div className="flex flex-col">
       <form
-        className="flex flex-col items-center bg-white rounded-2xl w-2/5 p-5 m-auto my-5"
+        className="flex flex-col items-center bg-white rounded-2xl w-4/5 p-5 m-auto my-5 lg:w-2/5"
         onSubmit={handleSubmit}
       >
         <h1 className="text-4xl font-bold mb-3">Create account</h1>
-        <label className="text-lg text-center">
-          Already have an account?
-          <a className="ml-2 hover:text-blue-500 underline">
-            <Link href="/login">Click here to sign in</Link>
-          </a>
-        </label>
+        <label className="text-lg text-center">Already have an account?</label>
+        <a className="ml-2 hover:text-blue-500 underline">
+          <Link href="/login">Click here to sign in</Link>
+        </a>
         <p className="text-center text-red-500">{props.errorMessage}</p>
         <input
           className="w-full shadow-md border outline-none shadow-gray-400 rounded-lg py-3 p-2 m-3 mt-8"

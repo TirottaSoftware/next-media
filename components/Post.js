@@ -12,7 +12,7 @@ export default function Post({
 }) {
   return (
     <div
-      className="bg-white flex flex-col w-3/5 border-gray-500 rounded-2xl m-5 p-5"
+      className="bg-white flex flex-col w-full lg:w-3/5 border-gray-500 rounded-2xl mx-auto mt-10 lg:m-5 p-5"
       key={post.id}
     >
       <div className="flex justify-between items-center">

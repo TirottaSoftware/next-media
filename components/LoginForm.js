@@ -14,7 +14,7 @@ function LoginForm(props) {
   return (
     <div className="flex flex-col">
       <form
-        className="flex flex-col items-center bg-white rounded-2xl w-2/5 p-5 m-auto my-5"
+        className="flex flex-col items-center bg-white rounded-2xl w-4/5 p-5 m-auto my-5 lg:w-2/5"
         onSubmit={handleSubmit}
       >
         <h1 className="text-4xl font-bold mb-3">Login</h1>

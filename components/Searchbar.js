@@ -34,7 +34,7 @@ export default function Searchbar() {
         onChange={handleInput}
         placeholder="Search"
       />
-      <div className="absolute flex flex-col pt-1 bg-white w-1/5 rounded-lg items-center">
+      <div className="absolute flex flex-col lg:pt-1 bg-white lg:w-1/5 w-4/5 rounded-lg items-center">
         {foundUsers.length > 0
           ? foundUsers.map((user) => {
               return (

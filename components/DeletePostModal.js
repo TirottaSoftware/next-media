@@ -4,7 +4,7 @@ export default function DeletePostModal({
   postToDelete,
 }) {
   return (
-    <div className="fixed bg-gray-200 p-5 rounded-lg flex flex-col mx-auto bottom-[50%] left-0 right-0 w-1/5 items-center">
+    <div className="fixed bg-gray-200 p-5 rounded-lg flex flex-col mx-auto bottom-[50%] left-0 right-0 lg:w-1/5 w-5/6 items-center">
       Are you sure you want to delete this post?
       <div className="flex items-center justify-center space-x-5">
         <button

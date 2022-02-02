@@ -25,7 +25,7 @@ function AddCommentForm(props) {
           }}
         />
         <input
-          className="rounded-lg cursor-pointer p-2 m-2 bg-blue-400 w-1/5 text-white"
+          className="rounded-lg cursor-pointer p-2 m-2 bg-blue-400 w-2/5 lg:w-1/5 text-white"
           type="submit"
           value="Comment"
         />

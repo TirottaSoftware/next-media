@@ -12,7 +12,7 @@ function ChangePasswordForm(props) {
   };
 
   return (
-    <div className="w-2/5 px-5 mx-auto">
+    <div className="w-full lg:w-2/5 px-5 mx-auto">
       <form
         className="flex bg-white rounded-lg flex-col items-center p-5 m-auto my-5"
         onSubmit={handleSubmit}

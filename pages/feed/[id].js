@@ -29,11 +29,14 @@ function Post({ post, likes, comments, user }) {
   };
 
   return (
-    <div className="w-4/5 m-auto justify-center flex my-10">
-      <img src={post.imageUrl} className={post.imageUrl ? "w-4/6" : ""} />
+    <div className="w-full lg:w-4/5 m-auto justify-center flex flex-col lg:flex-row my-10">
+      <img
+        src={post.imageUrl}
+        className={post.imageUrl ? "lg:w-4/6 w-5/6 m-auto" : ""}
+      />
       <div
         className={`${
-          post.imageUrl ? "w-2/6" : "w-7/12"
+          post.imageUrl ? "w-5/6 mx-auto lg:w-2/6" : "w-full"
         } + border rounded-lg p-5 flex flex-col justify-between`}
       >
         <div>
@@ -63,7 +66,7 @@ function Post({ post, likes, comments, user }) {
             </div>
             <label className="text-gray-500">{post.createdAt}</label>
           </div>
-          <div className="mt-5 overflow-y-scroll scrollbar scrollbar-thin h-64 mb-3">
+          <div className="mt-5 overflow-y-scroll scrollbar scrollbar-thin h-40 lg:h-64 mb-3">
             {comments.map((comment) => {
               return <Comment user={comment.user} content={comment.content} />;
             })}
