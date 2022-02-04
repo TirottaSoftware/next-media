@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "User" ADD COLUMN     "bio" VARCHAR(255) NOT NULL DEFAULT E'';
