@@ -16,7 +16,7 @@ function Settings({ user }) {
     }
     setErrorMessage("");
     axios
-      .put("https://next-media.vercel.app/api/users", {
+      .put("https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/users", {
         uid: user?.id,
         username,
         email,
