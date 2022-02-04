@@ -10,10 +10,7 @@ export default function ForgotPassword() {
     setErrorMessage("");
     setSuccessMessage("");
     axios
-      .post(
-        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/forgot",
-        { email }
-      )
+      .post("https://next-media.vercel.app/api/forgot", { email })
       .then((res) => {
         if (res.data.error) {
           setErrorMessage(res.data.error);

@@ -18,15 +18,12 @@ function Signup() {
     }
 
     axios
-      .post(
-        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/users",
-        {
-          username,
-          email,
-          password,
-          password_confirm: passwordConfirm,
-        }
-      )
+      .post("https://next-media.vercel.app/api/users", {
+        username,
+        email,
+        password,
+        password_confirm: passwordConfirm,
+      })
       .then((res) => {
         if (res.data.error) {
           setErrorMessage(res.data.error);

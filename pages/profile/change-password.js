@@ -17,15 +17,12 @@ function ChangePassword({ user }) {
       return;
     }
     axios
-      .put(
-        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/users/change-password",
-        {
-          uid: user.id,
-          currentPassword: current,
-          newPassword,
-          confirmNewPassword: confirmPassword,
-        }
-      )
+      .put("https://next-media.vercel.app/api/users/change-password", {
+        uid: user.id,
+        currentPassword: current,
+        newPassword,
+        confirmNewPassword: confirmPassword,
+      })
       .then((res) => {
         if (res.data.error) {
           setErrorMessage(res.data.error);

@@ -35,7 +35,7 @@ export default async function handler(req, res) {
         from: `"${process.env.NODEMAILER_USERNAME}@abv.bg`, // sender address
         to: email, // list of receivers
         subject: "Password Reset ✔", // Subject line
-        text: `To reset your password, please follow the link: https://next-media-cdre6hebu-tirottasoftware.vercel.app/reset-password/${id}`, // plaintext body
+        text: `To reset your password, please follow the link: https://next-media.vercel.app/reset-password/${id}`, // plaintext body
       };
 
       // send mail with defined transport object

@@ -26,13 +26,10 @@ function profile({ user, posts }) {
 
   const likePost = (postId) => {
     axios
-      .post(
-        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/likes",
-        {
-          postId,
-          userId: user.id,
-        }
-      )
+      .post("https://next-media.vercel.app/api/likes", {
+        postId,
+        userId: user.id,
+      })
       .then(() => {
         router.reload();
       });
@@ -43,7 +40,7 @@ function profile({ user, posts }) {
 
     axios
       .delete(
-        `https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/posts?userId=${userId}&postId=${postId}`
+        `https://next-media.vercel.app/api/posts?userId=${userId}&postId=${postId}`
       )
       .then((res) => {
         if (res.data.error) {
@@ -94,7 +91,7 @@ export default profile;
 export async function getServerSideProps(context) {
   const session = await getSession(context);
 
-  //https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/posts?uid=
+  //https://next-media.vercel.app/api/posts?uid=
   if (!session) {
     return {
       redirect: {
@@ -104,18 +101,13 @@ export async function getServerSideProps(context) {
     };
   }
   const user = await axios
-    .get(
-      "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/users/" +
-        session?.user.id
-    )
+    .get("https://next-media.vercel.app/api/users/" + session?.user.id)
     .then((res) => {
       return res.data;
     });
 
   const posts = await axios
-    .get(
-      `https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/posts?uid=${session?.user.id}`
-    )
+    .get(`https://next-media.vercel.app/api/posts?uid=${session?.user.id}`)
     .then((res) => {
       return res.data;
     });
