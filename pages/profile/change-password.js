@@ -18,7 +18,7 @@ function ChangePassword({ user }) {
     }
     axios
       .put(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/users/change-password",
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/users/change-password",
         {
           uid: user.id,
           currentPassword: current,

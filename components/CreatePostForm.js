@@ -24,7 +24,7 @@ function CreatePostForm() {
 
     axios
       .post(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/posts",
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/posts",
         {
           title,
           content,
@@ -53,7 +53,7 @@ function CreatePostForm() {
             onSubmit={handleSubmit}
             className="flex w-full flex-col items-center p-5 m-auto "
             method="POST"
-            action="https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/posts"
+            action="https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/posts"
           >
             <h1 className="text-2xl mb-3 text-blue-800 font-bold">
               Create a new post

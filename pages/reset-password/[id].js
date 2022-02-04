@@ -19,7 +19,7 @@ export default function ResetPassword() {
 
     axios
       .patch(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/reset",
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/reset",
         { id, password }
       )
       .then((res) => {

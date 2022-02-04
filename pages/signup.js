@@ -19,7 +19,7 @@ function Signup() {
 
     axios
       .post(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/users",
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/users",
         {
           username,
           email,

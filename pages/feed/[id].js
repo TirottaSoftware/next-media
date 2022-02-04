@@ -18,7 +18,7 @@ function Post({ post, likes, comments, user }) {
   const handleSubmit = async (content) => {
     await axios
       .post(
-        `https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/comments`,
+        `https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/comments`,
         {
           postId: post.id,
           userId: user.id,
@@ -123,7 +123,7 @@ export async function getServerSideProps(context) {
 
   const comments = await axios
     .get(
-      `https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/comments/${id}`
+      `https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/comments/${id}`
     )
     .then((res) => {
       return res.data;
@@ -131,7 +131,7 @@ export async function getServerSideProps(context) {
 
   const post = await axios
     .get(
-      "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/posts/" + id
+      "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/posts/" + id
     )
     .then((res) => {
       return res.data;
@@ -151,7 +151,7 @@ export async function getServerSideProps(context) {
 
   const likes = await axios
     .get(
-      "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/likes/" + id
+      "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/likes/" + id
     )
     .then((res) => {
       return res.data;

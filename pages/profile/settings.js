@@ -16,13 +16,16 @@ function Settings({ user }) {
     }
     setErrorMessage("");
     axios
-      .put("https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/users", {
-        uid: user?.id,
-        username,
-        email,
-        profilePictureUrl,
-        bio,
-      })
+      .put(
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/users",
+        {
+          uid: user?.id,
+          username,
+          email,
+          profilePictureUrl,
+          bio,
+        }
+      )
       .then((res) => {
         if (res.error) {
           setErrorMessage(res.error);

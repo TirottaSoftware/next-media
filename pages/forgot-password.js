@@ -11,7 +11,7 @@ export default function ForgotPassword() {
     setSuccessMessage("");
     axios
       .post(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/forgot",
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/forgot",
         { email }
       )
       .then((res) => {

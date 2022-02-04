@@ -24,7 +24,7 @@ export default function User({ user, isFollowed, currentUser }) {
   const likePost = (postId) => {
     axios
       .post(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/likes",
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/likes",
         {
           postId,
           userId: currentUser.id,
@@ -40,7 +40,7 @@ export default function User({ user, isFollowed, currentUser }) {
 
     axios
       .delete(
-        `https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/posts?userId=${userId}&postId=${postId}`
+        `https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/posts?userId=${userId}&postId=${postId}`
       )
       .then((res) => {
         if (res.data.error) {
@@ -62,7 +62,7 @@ export default function User({ user, isFollowed, currentUser }) {
 
     axios
       .post(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/follows",
+        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/follows",
         {
           followerId,
           followingId,
@@ -128,7 +128,7 @@ export async function getServerSideProps(context) {
 
   const user = await axios
     .get(
-      "https://next-media-90r4bujz9-tirottasoftware.vercel.appapi/users/" + id
+      "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/users/" + id
     )
     .then((res) => {
       return res.data;
