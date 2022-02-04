@@ -23,12 +23,15 @@ function CreatePostForm() {
     }
 
     axios
-      .post("http://localhost:3000/api/posts", {
-        title,
-        content,
-        imageUrl,
-        authorId: session?.user.id,
-      })
+      .post(
+        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/posts",
+        {
+          title,
+          content,
+          imageUrl,
+          authorId: session?.user.id,
+        }
+      )
       .then(() => {
         router.reload();
       });
@@ -50,7 +53,7 @@ function CreatePostForm() {
             onSubmit={handleSubmit}
             className="flex w-full flex-col items-center p-5 m-auto "
             method="POST"
-            action="http://localhost:3000/api/posts"
+            action="https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/posts"
           >
             <h1 className="text-2xl mb-3 text-blue-800 font-bold">
               Create a new post

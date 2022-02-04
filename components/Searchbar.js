@@ -19,7 +19,10 @@ export default function Searchbar() {
     setSearchTerm(e.target.value);
 
     axios
-      .get("http://localhost:3000/api/users?search=" + e.target.value)
+      .get(
+        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/users?search=" +
+          e.target.value
+      )
       .then((res) => {
         setFoundUsers(res.data);
       });

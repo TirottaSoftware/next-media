@@ -23,10 +23,13 @@ export default function User({ user, isFollowed, currentUser }) {
 
   const likePost = (postId) => {
     axios
-      .post("http://localhost:3000/api/likes", {
-        postId,
-        userId: currentUser.id,
-      })
+      .post(
+        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/likes",
+        {
+          postId,
+          userId: currentUser.id,
+        }
+      )
       .then(() => {
         router.reload();
       });
@@ -37,7 +40,7 @@ export default function User({ user, isFollowed, currentUser }) {
 
     axios
       .delete(
-        `http://localhost:3000/api/posts?userId=${userId}&postId=${postId}`
+        `https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/posts?userId=${userId}&postId=${postId}`
       )
       .then((res) => {
         if (res.data.error) {
@@ -58,7 +61,10 @@ export default function User({ user, isFollowed, currentUser }) {
     const followingId = user.id;
 
     axios
-      .post("http://localhost:3000/api/follows", { followerId, followingId })
+      .post(
+        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/follows",
+        { followerId, followingId }
+      )
       .then((res) => {
         router.reload();
       });
@@ -118,7 +124,9 @@ export async function getServerSideProps(context) {
   }
 
   const user = await axios
-    .get("http://localhost:3000/api/users/" + id)
+    .get(
+      "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/users/" + id
+    )
     .then((res) => {
       return res.data;
     })

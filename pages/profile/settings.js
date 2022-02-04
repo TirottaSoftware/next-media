@@ -16,13 +16,16 @@ function Settings({ user }) {
     }
     setErrorMessage("");
     axios
-      .put("http://localhost:3000/api/users", {
-        uid: user?.id,
-        username,
-        email,
-        profilePictureUrl,
-        bio,
-      })
+      .put(
+        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/users",
+        {
+          uid: user?.id,
+          username,
+          email,
+          profilePictureUrl,
+          bio,
+        }
+      )
       .then((res) => {
         if (res.error) {
           setErrorMessage(res.error);

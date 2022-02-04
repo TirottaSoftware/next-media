@@ -9,12 +9,17 @@ export default function ForgotPassword() {
   const handleSubmit = (email) => {
     setErrorMessage("");
     setSuccessMessage("");
-    axios.post("http://localhost:3000/api/forgot", { email }).then((res) => {
-      if (res.data.error) {
-        setErrorMessage(res.data.error);
-      }
-      setSuccessMessage("Email sent.");
-    });
+    axios
+      .post(
+        "https://next-media-cdre6hebu-tirottasoftware.vercel.app/api/forgot",
+        { email }
+      )
+      .then((res) => {
+        if (res.data.error) {
+          setErrorMessage(res.data.error);
+        }
+        setSuccessMessage("Email sent.");
+      });
   };
 
   return (
