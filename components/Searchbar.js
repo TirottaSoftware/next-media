@@ -19,10 +19,7 @@ export default function Searchbar() {
     setSearchTerm(e.target.value);
 
     axios
-      .get(
-        "https://next-media-90r4bujz9-tirottasoftware.vercel.app/api/users?search=" +
-          e.target.value
-      )
+      .get("https://next-media.vercel.app/api/users?search=" + e.target.value)
       .then((res) => {
         setFoundUsers(res.data);
       });
