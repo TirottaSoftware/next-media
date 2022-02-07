@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     }
 
     const defaultProfilePicture =
-      "https://www.seekpng.com/png/full/138-1387631_login-comments-windows-10-person-icon.png";
+      "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
 
     const newUser = await client.user.create({
       data: {
