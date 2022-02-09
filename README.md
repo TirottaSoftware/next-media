@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextMedia by TirottaSoftware
 
-## Getting Started
+NextMedia is a Social Media mockup project, which involves a full stack web app with different functionalities like other Social Media applications
 
-First, run the development server:
+## How to use the app
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Visit  [NextMedia](https://next-media.vercel.app/)
+2. Sign up or Login into your account
+3. From there, you can follow/unfollow other users, see their posts & comments. Additionally, you can create a post on your own or edit your profile details (e.g. your profile bio, to let other users know more about you). You may also want to use the searchbar to find specific user accounts inside NextMedia).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## App Menus & Features
+### Creating & Deleting Posts
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can create a post by heading over to the home page (/feed) and typing the details of your post inside the form on the left side of the screen. For mobile users, the form would appear after clicking the "+New Post" button at the top of the page.
+After specifying the details of the post, simply hit create and you will be able to see your brand new post inside the feed section in a matter of seconds.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [https://next-media.vercel.app/api/hello](https://next-media.vercel.app/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Deleting one of your posts is as simple as just clicking the trash bin icon next to the post. This can be done from the home page or inside your own profile page.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Likes and Comments management
 
-## Learn More
+You can like and unlike a user's post by clicking the heart icon below it. You can also like your own post if you'd like (but seriously, who does that?).
+Moreover, you can see which users have liked a certain post by clicking on the likes count on the post page.
 
-To learn more about Next.js, take a look at the following resources:
+To comment on a post, click on the post's title to be redirected to its individual dynamic page. From there, you can use the comment form to comment on a user's post. 
+Note: At this point, removing comments is not a live feature, but it might be included at a later point in time.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Following & Unfollowing users
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Your feed section consists only of posts, posted by users you follow. To follow a user, head over to its profile page and click on follow. The same procedure applies for unfollowing a user.
 
-## Deploy on Vercel
+### User profile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You have the ability to change your account details, as well as retrieving information about your posts by heading over to your own profile page. From there, you can:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ - Change your profile picture, email, username or password
+ - Update your bio
+ - View all your posts
+ - View the amount of your followers and followings
 
-# next-media
+## Technologies used
+* ReactJS
+* NextJS + NextAuth
+* HTML5
+* TailwindCSS
+* Prisma 
+* PostgreSQL
+* NodeJS
+* Server & Database hosted on Heroku
+* Client side hosted on Vercel
